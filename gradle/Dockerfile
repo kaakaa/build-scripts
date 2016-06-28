@@ -1,9 +1,6 @@
 FROM java:8u91-jdk
 
-RUN mkdir /root/gradle-sample
-
-WORKDIR /root/gradle-sample
 ADD ./app .
 
-ENTRYPOINT ["./gradlew"]
+ENTRYPOINT ["./gradlew", "-p", "/usr/local/src"]
 CMD ["tasks"]
